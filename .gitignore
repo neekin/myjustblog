@@ -1,0 +1,4 @@
+.DS_Store
+Thumbs.db
+/public/assets/bower
+/node_modules
