@@ -1,1 +1,6 @@
-#header{background:#0094ff}
+#content{
+	width: 700px;
+	height: 1200px;
+	background: #0094ff;
+	margin-left: 30%;
+}
