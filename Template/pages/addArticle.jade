@@ -1,0 +1,19 @@
+extends ../layout
+
+
+block sidebar
+  include ../blocks/sidebar
+block foot
+  include ../blocks/foot
+block content
+  .container.content
+    .row
+      form.form-horizontal(role="form")
+        div.form-group
+          lable.control-label.col-sm-2(for="title") 标题
+          div.col-sm-10
+            input.form-control#title(type="text" placeholder="请输入文章标题")
+        div.form-group
+          lable.control-label.col-sm-2(for="title") 副标题
+          div.col-sm-10
+            input.form-control#title(type="text" placeholder="请输入文章副标题")

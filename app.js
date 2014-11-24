@@ -20,3 +20,5 @@ app.get("/",function  (req,res) {
 	res.render("index",{});});
 app.get("/page",function  (req,res) {
 	res.render("page",{});});
+app.get("/add",function  (req,res) {
+	res.render("addArticle",{});});

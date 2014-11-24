@@ -2,9 +2,14 @@
     width: 800px;
     margin: 0 auto;
 }
+.carousel {
+    height: 500px;
+}
 .carousel-img {
-    width: 800px;
-    height: 400px;
+    width: 100%;
+}
+.carousel .item {
+    height: 500px; //固定高度
 }
 .title {
     text-align: center;
@@ -27,12 +32,12 @@ a:link {
     text-decoration: none;
 }
 .secondary {
-    margin:0 5px ;
+    margin: 0 5px;
 }
 .hr {
     height: 1px;
     background-color: #dededc;
-    margin:10px 0 50px;
+    margin: 10px 0 50px;
 }
 .paginator {
     position: relative;
@@ -71,10 +76,9 @@ a:link {
 .paginator a:hover {
     background-color: rgba(0, 121, 152, 0.5);
 }
-.clear
-{
-	clear:both;
+.clear {
+    clear: both;
 }
-.textbody{
+.textbody {
     font-size: 16px;
 }
