@@ -2,6 +2,61 @@ extends ../layout
 
 
 block sidebar
-  include sidebar
+  include ../blocks/sidebar
+block foot
+  include ../blocks/foot
 block content
-  div#content 试一试
+   .container.content
+     .row  
+        .carousel.slide#carousel-generic(data-ride="carousel")
+          ol.carousel-indicators
+            li.active(data-target="#carousel-generic" data-slide-to="0")
+            li(data-target="#carousel-generic" data-slide-to="1")
+            li(data-target="#carousel-generic" data-slide-to="2")
+          .carousel-inner(role="listbox")
+            .item.active
+              img.carousel-img(src="/images/01.png")
+              .carousel-caption
+            .item
+              img.carousel-img(src="/images/02.png")
+              .carousel-caption
+             .item
+              img.carousel-img(src="/images/03.png")
+              .carousel-caption
+          a.left.carousel-control(href="#carousel-generic" role="button" data-slide="prev")
+            span.glyphicon.glyphicon-chevron-left
+            span.sr-only Previous
+          a.right.carousel-control(href="#carousel-generic" role="button" data-slide="next")
+            span.glyphicon.glyphicon-chevron-right
+            span.sr-only Next
+     .row
+      a(href="http://", target="_blank")
+           h2.title 主标题
+             span.subtitle 副标题
+          p.publish-time(title="2014-11-07T00:00:00") 07 Nov 2014
+          p.textbody 这里是文章主体截取部分
+          a.pull-right.secondary(href="http://", target="_blank") 阅读全文
+          a.pull-right.secondary(href="http://", target="_blank") 0条评论
+      div.hr.clear
+      a(href="http://", target="_blank")
+           h2.title 主标题
+             span.subtitle 副标题
+          p.publish-time(title="2014-11-07T00:00:00") 07 Nov 2014
+          p.textbody 这里是文章主体截取部分
+          a.pull-right.secondary(href="http://", target="_blank") 阅读全文
+          a.pull-right.secondary(href="http://", target="_blank") 0条评论
+      div.hr.clear
+      a(href="http://", target="_blank")
+           h2.title 主标题
+             span.subtitle 副标题
+          p.publish-time(title="2014-11-07T00:00:00") 07 Nov 2014
+          p.textbody 这里是文章主体截取部分
+          a.pull-right.secondary(href="http://", target="_blank") 阅读全文
+          a.pull-right.secondary(href="http://", target="_blank") 0条评论
+      div.hr.clear
+     .row
+      p.paginator 2 / 6
+       a.prev-page(href="#") &lt 
+       a.next-page(href="#") &gt
+
+         

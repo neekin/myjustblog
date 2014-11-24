@@ -1,7 +1,11 @@
-#sidebar{
-             padding: 100px 20px 0 150px;
-	background-color: #e1e1e1;
-	width: 30%;
-	position: fixed;
-	min-height: 100%;
+#sidebar {
+    padding: 100px 20px 0 150px;
+    background-color: #e1e1e1;
+    width: 300px;
+    position: fixed;
+    min-height: 100%;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: 100;
 }

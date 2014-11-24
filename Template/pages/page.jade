@@ -1,0 +1,22 @@
+extends ../layout
+
+
+block sidebar
+  include ../blocks/sidebar
+block foot
+  include ../blocks/foot
+block content
+   .container.content
+     .row 
+       h2.title 主标题
+             span.subtitle 副标题
+       p.publish-time(title="2014-11-07T00:00:00") 07 Nov 2014
+       .textbody(style="height:900px;border:1px solid #0094ff")  这是文章主题部分
+     .aboutme.row
+      .col-sm-9
+       h3.pull-left 关于我
+       .clear
+       p 90年后 码农
+      .col-sm-3
+        h3.pull-right 分享这篇文章
+        .clear

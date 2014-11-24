@@ -18,3 +18,5 @@ console.log("Website is on prot "+ port);
 //路由 访问 根目录返回的页面
 app.get("/",function  (req,res) {
 	res.render("index",{});});
+app.get("/page",function  (req,res) {
+	res.render("page",{});});
