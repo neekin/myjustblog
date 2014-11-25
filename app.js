@@ -2,18 +2,25 @@
 var express = require("express");
 //引入path  因为我们引入样式后，框架并不知道我们的静态资源文件在哪
 var path = require("path");
-//引入mongoose ODM来操作数据
+//1引入mongoose ODM来操作数据
 var mongoose = require('mongoose');
-//mongoose链接服务器
+//2mongoose链接服务器
 mongoose.connect('mongodb://localhost/local');
-//引入model模型
+//3引入model模型
 var Article = require("./model/article");
-//再来生成对象
+//4再来初始化对象
 var article = new Article({
 	title:"这仅仅是个测试",
 	subtitle:"没错 是个测试",
 	articlebody:"一下写到这 我好紧张呀"
 });
+
+//5最后保存即可
+/*   article.save(function(err){
+   if(err)
+   	console.log("Err");
+
+   })*/
 var port = process.env.PORT  || 3000;
 var app = express();
 //设置VIews的路径 对应请求名字 在该目录 放模板
