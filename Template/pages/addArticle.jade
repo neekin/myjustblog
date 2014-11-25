@@ -1,6 +1,12 @@
 extends ../layout
 
-
+block style
+  include ../includes/style
+  include ../includes/googlecodeprettifycss
+  link(href="/css/bootstrap-wysiwyg-editor.css" rel="stylesheet" type="text/css")
+block scripts
+  include ../includes/googlecodeprettifyjs
+  include ../includes/bootstrapwysiwyg
 block sidebar
   include ../blocks/sidebar
 block foot
@@ -17,3 +23,5 @@ block content
           lable.control-label.col-sm-2(for="title") 副标题
           div.col-sm-10
             input.form-control#title(type="text" placeholder="请输入文章副标题")
+
+        include ../blocks/bootstra-wysiwyg

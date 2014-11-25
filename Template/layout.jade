@@ -4,12 +4,13 @@ html
       meta(charset="utf-8")
       title
       include ./includes/bootstrap
-      include ./includes/style
+      block style
       include ./includes/sidebar
     body
       block sidebar
       block  content
       block foot
       include ./includes/js
+      block scripts
 
     
