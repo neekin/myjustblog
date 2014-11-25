@@ -14,14 +14,18 @@ block foot
 block content
   .container.content
     .row
+      h1 添加文章
+      .hr
       form.form-horizontal(role="form")
-        div.form-group
+        .form-group
           lable.control-label.col-sm-2(for="title") 标题
-          div.col-sm-10
+          .col-sm-8
             input.form-control#title(type="text" placeholder="请输入文章标题")
-        div.form-group
+        .form-group
           lable.control-label.col-sm-2(for="title") 副标题
-          div.col-sm-10
+          .col-sm-8
             input.form-control#title(type="text" placeholder="请输入文章副标题")
 
         include ../blocks/bootstra-wysiwyg
+
+      

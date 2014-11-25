@@ -1,6 +1,6 @@
 #editor {
-	max-height: 460px;
-	height: 460px;
+	 max-height: 600px;
+    height: 460px;
 	background-color: white;
 	border-collapse: separate; 
 	border: 1px solid rgb(204, 204, 204); 
@@ -35,4 +35,9 @@ div[data-role="editor-toolbar"] {
 
 .dropdown-menu a {
   cursor: pointer;
+}
+.hero-unit{
+ 
+  width: 80%;
+  margin: 0 auto;
 }
