@@ -3,6 +3,7 @@ extends ../layout
 block style
   include ../includes/style
   include ../includes/googlecodeprettifycss
+  include ../includes/font-awesome
   link(href="/css/bootstrap-wysiwyg-editor.css" rel="stylesheet" type="text/css")
 block scripts
   include ../includes/googlecodeprettifyjs
@@ -16,16 +17,18 @@ block content
     .row
       h1 添加文章
       .hr
-      form.form-horizontal(role="form")
+      form#addArticle.form-horizontal(role="form" method="post" action="/add")
         .form-group
           lable.control-label.col-sm-2(for="title") 标题
           .col-sm-8
-            input.form-control#title(type="text" placeholder="请输入文章标题")
+            input.form-control#title(type="text" placeholder="请输入文章标题" name="title")
         .form-group
           lable.control-label.col-sm-2(for="title") 副标题
           .col-sm-8
-            input.form-control#title(type="text" placeholder="请输入文章副标题")
-
-        include ../blocks/bootstra-wysiwyg
-
-      
+            input.form-control#title(type="text" placeholder="请输入文章副标题" name="subtitle")
+          .col-sm-12
+              include ../blocks/bootstra-wysiwyg
+        .col-sm-5
+        .col-sm-2
+            input#test.btn.btn-primary.btn-lg(type="button" value="提交文章" )
+        .col-sm-5

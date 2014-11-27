@@ -2,7 +2,7 @@
   .btn-toolbar(data-role="editor-toolbar" data-target="#editor")
      .btn-group
        a.btn.dropdown-toggle(data-toggle="dropdown" title="Font")
-         i.glyphicon.glyphicon-font
+         i.icon-font
          b.caret
        ul.dropdown-menu
      .btn-group
@@ -21,48 +21,50 @@
             font(size="1") Small
       .btn-group
         a.btn(data-edit="bold" title="Bold (Ctrl/Cmd+B)")
-          i.glyphicon.glyphicon-bold
+          i.icon-bold
         a.btn(data-edit="italic" title="Italic (Ctrl/Cmd+I)")
-          i.glyphicon.glyphicon-italic
+          i.icon-italic
         a.btn(data-edit="strikethrough" title="Strikethrough (Ctrl/Cmd+B)")
-          i.glyphicon.glyphicon-strikethrough
+          i.icon-strikethrough
         a.btn(data-edit="underline" title="Underline (Ctrl/Cmd+U)")
-          i.glyphicon.glyphicon-underline
+          i.icon-underline
       .btn-group
        a.btn(data-edit="insertunorderedlist" title="Bullet list")
-          i.glyphicon.glyphicon-list
+          i.icon-list-ul
        a.btn(data-edit="insertorderedlist" title="Number list")
-          i.glyphicon.glyphicon-list-ol
+          i.icon-list-ol
        a.btn(data-edit="outdent" title="Reduce indent (Shift+Tab)")
-          i.glyphicon.glyphicon-indent-left
+          i.icon-indent-left
        a.btn(data-edit="indent" title="Indent (Tab)")
-          i.glyphicon.glyphicon-indent-right
+          i.icon-indent-right
       .btn-group
         a.btn(data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)")
-          i.glyphicon.glyphicon-align-left
+          i.icon-align-left
         a.btn(data-edit="justifycenter" title="Center (Ctrl/Cmd+E)")
-          i.glyphicon.glyphicon-align-center
+          i.icon-align-center
         a.btn(data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)")
-          i.glyphicon.glyphicon-align-right
+          i.icon-align-right
         a.btn(data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)")
-          i.glyphicon.glyphicon-align-justify
+          i.icon-align-justify
       .btn-group
         a.btn.dropdown-toggle(data-toggle="dropdown" title="Hyperlink")
-          i.glyphicon.glyphicon-link
+          i.icon-link
         div.dropdown-menu.input-append
           input.span2(placeholder="URL" type="text" data-edit="createLink")
-          button.btn(type="button") Add
+          button.btn.btn-primary(type="button") Add
         a.btn(data-edit="unlink" title="Remove Hyperlink")
-          i.glyphicon.glyphicon-cut
-      .btn-group
+          i.icon-remove
+      .btn-group(width="41px")
         a.btn#pictureBtn(title="Insert picture (or just drag & drop)")
-           i.glyphicon.glyphicon-picture
+           i.icon-picture
         input(type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage")
       .btn-group
         a.btn(data-edit="undo" title="Undo (Ctrl/Cmd+Z)")
-          i.glyphicon.glyphicon-repeat.scale
+          i.icon-undo
         a.btn(data-edit="redo" title="Redo (Ctrl/Cmd+Y)")
-          i.glyphicon.glyphicon-repeat
-      //<input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+          i.icon-repeat
+    //input#voiceBtn(type="text" data-edit="inserttext" x-webkit-speech="" name="test")
+  
 
-  div#editor  Go ahead&hellip;
+  div#editor
+  input#textbody(name="textbody" type="hidden")

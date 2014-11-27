@@ -1,5 +1,7 @@
 //引入 express 框架 来处理请求
 var express = require("express");
+//引入body-parser 处理request里的body参数(既post请求过来的参数)
+var bodyParser = require("body-parser");
 //引入path  因为我们引入样式后，框架并不知道我们的静态资源文件在哪
 var path = require("path");
 //1引入mongoose ODM来操作数据
@@ -29,6 +31,8 @@ app.set("views","./Template/pages");
 app.set("view engine","jade");
 //告诉框架静态资源文件的路径
 app.use(express.static(path.join(__dirname,"")));
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json());
 //启动应用监听
 app.listen(port);
 console.log("Website is on prot "+ port);
@@ -44,4 +48,11 @@ app.get("/page",function  (req,res) {
 //
 app.get("/add",function  (req,res) {
 	res.render("addArticle",{title:"添加文章"});
+});
+app.post("/add",function(req,res){
+	res.send(req.body);
+})
+//
+app.get("/test",function  (req,res) {
+	res.render("test",{});
 });

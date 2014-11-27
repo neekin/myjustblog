@@ -1,6 +1,6 @@
 #editor {
-	 max-height: 600px;
-    height: 460px;
+	max-height: 600px;
+     height: 460px;
 	background-color: white;
 	border-collapse: separate; 
 	border: 1px solid rgb(204, 204, 204); 
@@ -38,6 +38,6 @@ div[data-role="editor-toolbar"] {
 }
 .hero-unit{
  
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
