@@ -7,24 +7,12 @@ var path = require("path");
 //引入百度富文本
 var ueditor = require("ueditor");
 //1引入mongoose ODM来操作数据
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 //2mongoose链接服务器
-//mongoose.connect('mongodb://localhost/local');
+mongoose.connect('mongodb://localhost/local');
 //3引入model模型
-//var Article = require("./model/article");
-//4再来初始化对象
-/*var article = new Article({
-	title:"这仅仅是个测试",
-	subtitle:"没错 是个测试",
-	articlebody:"一下写到这 我好紧张呀"
-});*/
+var Article = require("./model/article");
 
-//5最后保存即可
-/*   article.save(function(err){
-   if(err)
-   	console.log("Err");
-
-   })*/
 var port = process.env.PORT  || 3000;
 var app = express();
 //设置VIews的路径 对应请求名字 在该目录 放模板
@@ -60,18 +48,52 @@ console.log("Website is on prot "+ port);
 
 //路由 访问 根目录返回的页面
 app.get("/",function  (req,res) {
-	res.render("index",{ title:"首页"});
+/*       Article.find(function(err,articles){
+         if(err){console.log(err)}
+          console.log(articles);
+        res.render("index",{ title:"首页",articles:articles});
+       })*/
+      //静态方法也是可以的
+      Article.findAll(function(err,articles){
+        if(err){console.log(err)}
+          res.render("index",{title:"首页",articles:articles});
+      });
+
+	
 });
-//
+//访问文章页面
 app.get("/page",function  (req,res) {
-	res.render("page",{});
+/*  Article.findOne(req.params.id,function(err,article){
+        if(err){console.log(err)}
+           res.render("page",{title:article.title,article:article});
+  });*/
+
+  Article.findById(req.params.id,function(err,article){
+                    if(err){console.log(err)}
+                        res.render("page",{title:article.title,article:article});
+  });
 });
-//
+//访问添加文章页
 app.get("/add",function  (req,res) {
 	res.render("addArticle",{title:"添加文章"});
 });
+//添加文章方法
 app.post("/add",function(req,res){
-	res.send(req.body);
+
+//4再来初始化对象
+var article = new Article({
+  title:req.body.title,
+  subtitle:req.body.subtitle,
+  articlebody:req.body.editorValue
+});
+
+//5最后保存即可
+  article.save(function(err){
+   if(err)
+    console.log("Err");
+   return;
+   })
+	res.send("保存成功！");
 })
 //
 app.get("/test",function  (req,res) {
