@@ -9,11 +9,11 @@ block foot
   include ../blocks/foot
 block content
    .container.content
-     .row 
+     .row.page 
        h2.title #{article.title}
              span.subtitle #{article.subtitle}
        p.publish-time(title="#{article.publishtime}") #{article.publishtime}
-       .textbody(style="height:900px;border:1px solid #0094ff")  !{article.articlebody}
+       .textbody !{article.articlebody}
      .aboutme.row
       .col-sm-9
        h3.pull-left 关于我

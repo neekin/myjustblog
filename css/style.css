@@ -1,16 +1,28 @@
+body{
+background: url(/images/back.jpg) repeat;
+background-size:100% 100%;
+}
+/*首页布局*/
 .content {
     width: 60%;
     margin: 0 auto;
  
 }
 .carousel {
-    height: 500px;
+    min-height: 220px;
+    max-height: 500px;
+    height: auto;
 }
 .carousel-img {
     width: 100%;
+     height: auto;
+    max-height: 500px;
+     min-height: 220px;
 }
 .carousel .item {
-    height: 500px; //固定高度
+    height: auto; //固定高度
+     min-height: 220px;
+     max-height: 500px;
 }
 .title {
     text-align: center;
@@ -77,14 +89,20 @@ a:link {
 .paginator a:hover {
     background-color: rgba(0, 121, 152, 0.5);
 }
-.clear {
-    clear: both;
-}
-.textbody {
-    font-size: 16px;
-}
+
 .scale
 {
 -webkit-transform: scale(-1,1);
   transform: scale(-1,1);
+}
+.clear {
+    clear: both;
+}
+/*文章页面布局*/
+.textbody {
+    padding: 20px;
+}
+.page{
+    background-color: #fff;
+    min-height: 600px;
 }
