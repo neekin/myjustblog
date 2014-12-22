@@ -1,0 +1,30 @@
+extends ../layout
+
+block style
+  include ../includes/style
+  include ../includes/googlecodeprettifycss
+  include ../includes/font-awesome
+block scripts
+  include ../includes/googlecodeprettifyjs
+  include ../includes/baidu-ueditor
+  
+block sidebar
+  include ../blocks/sidebar
+block foot
+  include ../blocks/foot
+block content
+  .container.content
+    .row
+      h1 登陆
+      .hr
+      form#addArticle.form-horizontal(role="form" method="post" action="/login")
+        .form-group
+          lable.control-label.col-sm-2(for="username") 用户名：
+          .col-sm-8
+            input.form-control#title(type="text" placeholder="请输入用户名" name="username")
+        .form-group
+          lable.control-label.col-sm-2(for="password") 密　码：
+          .col-sm-8
+            input.form-control#title(type="password" placeholder="请输入密码" name="password")
+          .col-sm-2
+            input#add.btn.btn-primary.btn-lg(type="submit" value="登陆" onclick="add" )

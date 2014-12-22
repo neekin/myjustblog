@@ -2,17 +2,19 @@
 var express = require("express");
 //引入body-parser 处理request里的body参数(既post请求过来的参数)
 var bodyParser = require("body-parser");
+var session = require('express-session');
 //引入path  因为我们引入样式后，框架并不知道我们的静态资源文件在哪
 var path = require("path");
 //引入百度富文本
 var ueditor = require("ueditor");
+
+//数据库相关
 //1引入mongoose ODM来操作数据
 var mongoose = require('mongoose');
 //2mongoose链接服务器
 mongoose.connect('mongodb://localhost/local');
 //3引入model模型
 var Article = require("./model/article");
-
 var port = process.env.PORT  || 3000;
 var app = express();
 //设置VIews的路径 对应请求名字 在该目录 放模板
@@ -93,10 +95,22 @@ var article = new Article({
     console.log("Err");
    return;
    })
-	res.send("保存成功！");
+	res.send("<script>alert('保存成功！') ;window.location.href=\"/\";</script>");
+      //res.redirect("/");
 })
 //
 app.get("/test",function  (req,res) {
 	res.render("test",{});
 });
 
+app.get("/login",function  (req,res) {
+  res.render("login",{});
+});
+app.post("/login",function  (req,res) {
+  var username = req.body.username;
+  var password = req.body.password;
+  session.username = username;
+  session.password = password;
+  console.log(session);
+  res.render("login",{}); 
+});
