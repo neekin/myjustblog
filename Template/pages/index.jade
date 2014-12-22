@@ -32,7 +32,7 @@ block content
             span.sr-only Next
      .row
        each article in articles
-        a(href="page?id=#{article.id}" target="_blank")
+        a(href="page/#{article.id}" target="_blank")
           h2.title #{article.title}
             span.subtitle #{article.subtitle}
           p.publish-time(title #{article.publishtime}) #{article.publishtime}

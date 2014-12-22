@@ -55,21 +55,21 @@ app.get("/",function  (req,res) {
        })*/
       //静态方法也是可以的
       Article.findAll(function(err,articles){
-        if(err){console.log(err)}
+        if(err){console.log(err);}
           res.render("index",{title:"首页",articles:articles});
       });
-
-	
 });
 //访问文章页面
-app.get("/page",function  (req,res) {
+app.get("/page/:id",function  (req,res) {
 /*  Article.findOne(req.params.id,function(err,article){
         if(err){console.log(err)}
            res.render("page",{title:article.title,article:article});
   });*/
 
-  Article.findById(req.params.id,function(err,article){
-                    if(err){console.log(err)}
+ Article.findById(req.params.id,function(err,article){
+  
+                    if(err){console.log(err);}
+
                         res.render("page",{title:article.title,article:article});
   });
 });

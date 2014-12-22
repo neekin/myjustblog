@@ -3,3 +3,4 @@ Thumbs.db
 /public/assets/bower
 /node_modules
 *.log
+/images

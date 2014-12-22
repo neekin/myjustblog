@@ -17,10 +17,11 @@ ArticleSchema.statics.findById= function(id,cb){
 //直接给方法数组
 ArticleSchema.statics = {
 	findAll:function(cb){
-		 return this.find({},cb).sort("publishtime");
+		//取出数据库所有文章数据并按时间排序
+		return this.find({}).sort({publishtime: -1}).exec(cb);
 	},
 	findById:function(id,cb){
-		 return this.findOne(id,cb);
+		 return this.findOne({_id:id},cb);
 	}
 }
 module.exports = ArticleSchema;
