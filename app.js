@@ -13,6 +13,7 @@ var session = require('express-session')
 //引入connect-mongo中间件做session 持久化的操作
 var mongoStore = require('connect-mongo')(session);
 var logger = require('morgan');
+var favicon = require('static-favicon');
 //数据库相关
 var dbUrl = 'mongodb://localhost/local';
 //1引入mongoose ODM来操作数据
@@ -30,6 +31,7 @@ app.set("view engine","jade");
 //告诉框架静态资源文件的路径
 app.use(express.static(path.join(__dirname,"")));
 //中间件相关
+app.use(favicon(path.join(__dirname,'/images/favicon.ico')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookie());
