@@ -49,15 +49,15 @@ if('development'===app.get("env")){
   app.locals.pretty = true;
   mongoose.set('debug',true);
 }
-app.use("/public/ueditor/ue", ueditor(path.join(__dirname, "images"), function(req, res, next) {
+//百度富文本                                            上传图片的路径
+app.use("/public/ueditor/ue", ueditor(path.join("images"), function(req, res, next) {
   // ueditor 客户发起上传图片请求
   if(req.query.action === 'uploadimage'){
     var foo = req.ueditor;
-    var date = new Date();
     var imgname = req.ueditor.filename;
-
-    var img_url = date.getTime()+imgname;
-    
+     //console.log(imgname);
+    var img_url =imgname;
+    console.log("img_url"+img_url);
     res.ue_up(img_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
   }//  客户端发起图片列表请求
   else if (req.query.action === 'listimage'){
