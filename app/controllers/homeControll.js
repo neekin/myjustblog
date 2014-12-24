@@ -1,7 +1,7 @@
 //引入依赖model
 
 var Article = require("../model/article");
-
+var User =require("../model/user");
 exports.index =function  (req,res) {
 /*       Article.find(function(err,articles){
          if(err){console.log(err)}
@@ -63,9 +63,19 @@ exports.loginPage=function  (req,res) {
   res.render("login",{});
 }
 exports.login=function  (req,res) {
-  req.session.user = {username:req.body.username,password:req.body.password}
-  console.log(req.session);
-  res.render("login",{}); 
+/*  var user = new User();
+  user.username = req.body.username;
+  user.password =req.body.password;*/
+  //console.log(user)
+  //console.log(req.body.password)
+  /*user.save(function(err){
+    if(err){
+      console.log(err)}
+     return;
+  })*/
+ // req.session.user = {username:req.body.username,password:req.body.password}
+  //console.log(req.session);
+  //res.render("login",{}); 
 }
 exports.err=function  (req,res) {
   res.render("404",{title:'错误'}); 
