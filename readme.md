@@ -7,3 +7,10 @@
 实现了数据库的添加与查询，有待实现复杂的查询以及删除和修改。
 
 对代码进行调整，更符合MVC结构
+
+/*
+:用以修改百度富文本上传路径 以日期分类  
+var date = new Date();
+          var datenow = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDay();
+          var dest = path.join(static_url,datenow, name);
+  */
