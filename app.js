@@ -73,4 +73,5 @@ app.listen(port);
 console.log("Website is on prot "+ port);
 
 //将路由分离，使用外部路由
-require("./config/routes")(app);
+require("./routes/home")(app);
+require("./routes/user")(app);

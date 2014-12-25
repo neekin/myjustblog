@@ -1,14 +1,40 @@
-.navbar-header.navbar
- p.navbar-text.navbar-right
-  a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 注册
-  span &nbsp;|&nbsp;
-  a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 登陆
-  span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.navbar.bavbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      a.navbar-brand(href='/') 仅仅是个BLOG
+    p.navbar-text.navbar-right
+      a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 注册
+      span &nbsp;|&nbsp;
+      a.navbar-link(href="#" data-toggle="modal" data-target="#signinModal") 登陆
 #signupModal.modal.fade
-  .modal-dialog
-    .modal-content
-      form(id="", method="POST", action="/login")
-        .modal-header 注册
-        .modal-body
-          .form-group
-            label
+   .modal-dialog
+       .modal-content
+         form(method="POST", action="/user/signup")
+          .modal-header 注册
+             a.pull-right( data-dismiss='modal') X
+          .modal-body
+             .form-group
+               label(for="sigunupName") 用户名
+               input#sigunupName.form-control(name="user[username]" type="text")
+             .form-group
+               label(for="sigunupPassword") 密　码
+               input#sigunupPassword.form-control(name="user[password]" type="password")
+          .modal-footer
+               button.btn.btn-success(type="submit") 提交
+               button.btn.btn-default(type="button",data-dismiss='modal') 关闭
+#signinModal.modal.fade
+   .modal-dialog
+       .modal-content
+         form(method="POST", action="/user/signin")
+          .modal-header 登陆
+             a.pull-right( data-dismiss='modal') X
+          .modal-body
+             .form-group
+               label(for="siguninName") 用户名
+               input#siguninName.form-control(name="user[username]" type="text")
+             .form-group
+               label(for="siguninPassword") 密　码
+               input#siguninPassword.form-control(name="user[password]" type="password")
+          .modal-footer
+               button.btn.btn-success(type="submit") 登陆
+               button.btn.btn-default(type="button",data-dismiss='modal') 关闭

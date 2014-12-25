@@ -1,7 +1,5 @@
 //引入依赖model
-
 var Article = require("../model/article");
-var User =require("../model/user");
 exports.index =function  (req,res) {
 /*       Article.find(function(err,articles){
          if(err){console.log(err)}
