@@ -1,0 +1,14 @@
+.navbar-header.navbar
+ p.navbar-text.navbar-right
+  a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 注册
+  span &nbsp;|&nbsp;
+  a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 登陆
+  span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#signupModal.modal.fade
+  .modal-dialog
+    .modal-content
+      form(id="", method="POST", action="/login")
+        .modal-header 注册
+        .modal-body
+          .form-group
+            label
