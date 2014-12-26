@@ -9,6 +9,7 @@ exports.index =function  (req,res) {
       //静态方法也是可以的
       Article.findAll(function(err,articles){
         if(err){console.log(err);}
+          console.log(req.session.user)
           res.render("index",{title:"首页",articles:articles});
       });
 }

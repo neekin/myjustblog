@@ -3,9 +3,14 @@
     .navbar-header
       a.navbar-brand(href='/') 仅仅是个BLOG
     p.navbar-text.navbar-right
-      a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 注册
-      span &nbsp;|&nbsp;
-      a.navbar-link(href="#" data-toggle="modal" data-target="#signinModal") 登陆
+     if user
+          span #{user.username} 欢迎登陆
+          span &nbsp;|&nbsp;
+          a.navbar-link(href="/user/logout" ) 登出
+     else
+          a.navbar-link(href="#" data-toggle="modal" data-target="#signupModal") 注册
+          span &nbsp;|&nbsp;
+          a.navbar-link(href="#" data-toggle="modal" data-target="#signinModal") 登陆
 #signupModal.modal.fade
    .modal-dialog
        .modal-content

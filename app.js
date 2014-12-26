@@ -43,6 +43,7 @@ app.use(session({
   })
 }));
 
+
 if('development'===app.get("env")){
   app.set('showStackError',true);
   app.use(logger(' :method :url :status'));
@@ -71,7 +72,7 @@ app.use("/public/ueditor/ue", ueditor(path.join("images"), function(req, res, ne
 //启动应用监听
 app.listen(port);
 console.log("Website is on prot "+ port);
-
+app.locals.config = require("./config/config");
 //将路由分离，使用外部路由
 require("./routes/home")(app);
 require("./routes/user")(app);

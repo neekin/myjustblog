@@ -5,10 +5,13 @@ html
       title #{title}
       include ./includes/bootstrap
       block style
-      include ./includes/sidebar
+      if config.sidebar
+          include ./includes/sidebar
     body
-      include ./blocks/top_nav
-      block sidebar
+      if config.top_nav
+       include ./blocks/top_nav
+      if config.sidebar
+       include ./blocks/sidebar
       block  content
       block foot
       include ./includes/js

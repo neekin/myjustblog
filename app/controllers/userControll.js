@@ -23,6 +23,11 @@ exports.signup = function(req,res){
 	}
 }
 
+exports.logout = function(req,res){
+   delete req.session.user;
+   res.redirect('/');
+}
+
 exports.signin=function(req,res){
         switch(req.method)
 	{
@@ -46,7 +51,8 @@ exports.signin=function(req,res){
                         		console.log(err);
                         	if(isMatch)
                         	{
-                        	   console.log('密码是对的 登陆咯')
+                            req.session.user = user;
+                            console.log(req.session);
                         	   return res.redirect('/');
 
                         	}
@@ -59,4 +65,11 @@ exports.signin=function(req,res){
             
 	}
 
+}
+
+exports.signinRequired= function(req,res,next){
+   if(!req.session.user){
+           return res.redirect("/");
+   }
+   next();
 }
